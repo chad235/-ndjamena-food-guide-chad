@@ -1,20 +1,98 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="دليل مطاعم ومقاهي أنجمينا — اكتشف المطاعم والمقاهي والعروض في مكان واحد.">
-<meta name="theme-color" content="#171717">
-<title>دليل مطاعم ومقاهي أنجمينا | NDJAMENA FOOD GUIDE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171c24">
+<title>دليل مطاعم ومقاهي أنجمينا | Guide des Restaurants et Cafés de N'Djamena</title>
+<meta name="description" content="اكتشف المطاعم والمقاهي والعروض في أنجمينا | Découvrez les restaurants, cafés et offres à N'Djamena.">
 <style>
-:root{--ink:#171717;--gold:#d8b46a;--cream:#f7f3e9;--muted:#756f64;--white:#fff;--line:#e9e2d5}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}.top{background:#111;color:#fff;border-bottom:1px solid #3b3325}.topin{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}.brand{display:flex;align-items:center;gap:12px}.mark{width:46px;height:46px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px}.brand strong{display:block;color:var(--gold);font-size:17px;letter-spacing:.4px}.brand small{display:block;color:#eee;font-size:11px}.nav{display:flex;gap:20px;color:#eee;font-size:14px}.lang{border:1px solid var(--gold);color:var(--gold);background:transparent;padding:8px 13px;border-radius:22px;cursor:pointer}.hero{background:radial-gradient(circle at 80% 20%,#4a3920 0,#211d17 32%,#111 75%);color:#fff;padding:76px 0 66px;text-align:center;position:relative;overflow:hidden}.hero:after{content:'✦';position:absolute;color:#d8b46a22;font-size:260px;left:4%;top:-55px}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:2px}.hero h1{font-size:clamp(30px,5vw,54px);line-height:1.25;margin:12px 0;color:var(--gold)}.hero p{max-width:650px;margin:0 auto 25px;color:#eee;font-size:17px}.hero .fr{display:block;color:#d7d0c3;font-size:14px;margin-top:8px}.search{display:flex;max-width:650px;margin:25px auto 0;background:#fff;border-radius:12px;padding:6px;gap:6px}.search input{flex:1;min-width:0;border:0;padding:13px;font:inherit;outline:0}.search button,.goldbtn{background:var(--gold);border:0;border-radius:9px;padding:12px 20px;font:inherit;font-weight:bold;cursor:pointer;color:#171717}.section{padding:54px 0}.sectionhead{text-align:center;margin-bottom:26px}.sectionhead h2{font-size:28px;margin:0 0 6px}.sectionhead p{color:var(--muted);margin:0}.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px 12px;text-align:center;cursor:pointer;transition:.2s}.cat:hover,.cat.active{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 25px #0000000c}.cat .ico{font-size:30px}.cat b{display:block;margin-top:6px}.cat small{color:var(--muted)}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:25px 0 16px}.toolbar select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:9px;background:#fff}.empty{background:#fff;border:1px dashed #cdbb96;border-radius:16px;padding:42px 20px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:19px;margin:8px}.empty .big{font-size:38px}.join{background:#171717;color:#fff;border-radius:20px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:22px}.join h2{color:var(--gold);margin:0 0 5px}.join p{margin:0;color:#ddd}.footer{background:#101010;color:#ddd;padding:30px 0;margin-top:55px}.footerin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer strong{color:var(--gold)}.note{font-size:12px;color:#aaa;margin-top:12px}.hide{display:none!important}@media(max-width:700px){.nav{display:none}.categories{grid-template-columns:repeat(2,1fr)}.hero{padding:58px 0}.join{display:block;text-align:center}.join .goldbtn{margin-top:18px}.toolbar{align-items:flex-start;flex-direction:column}.topin{padding:10px 0}}
-</style></head>
+:root{--ink:#171c24;--gold:#d8b46a;--cream:#f7f3e9;--muted:#68707b;--white:#fff;--line:#e9e3d7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{background:var(--ink);color:white;position:sticky;top:0;z-index:5;border-bottom:1px solid #343a42}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800}.mark{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:22px}
+.brand small{display:block;color:var(--gold);font-size:11px;letter-spacing:1.5px}
+nav{display:flex;gap:20px;align-items:center;font-size:14px}nav a:hover{color:var(--gold)}
+button,.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer;font:inherit}
+.lang{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:7px 13px}
+.hero{background:linear-gradient(120deg,rgba(23,28,36,.97),rgba(23,28,36,.78)),radial-gradient(circle at 80% 10%,#72552b,#171c24);color:white;padding:88px 0 78px}
+.hero-inner{max-width:760px}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(32px,5vw,56px);line-height:1.2;margin:12px 0}
+.hero p{font-size:18px;color:#e8e3d9;max-width:650px}
+.gold{background:var(--gold);color:var(--ink)}.outline{border:1px solid var(--gold);color:var(--gold);background:transparent;margin-inline-start:8px}
+.searchbar{margin-top:28px;background:white;border-radius:12px;padding:7px;display:flex;max-width:620px;gap:8px}
+.searchbar input{flex:1;min-width:0;border:0;padding:12px;font:inherit;outline:0;color:var(--ink)}
+section{padding:62px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:25px}
+h2{font-size:clamp(25px,3vw,34px);margin:0}.sub{color:var(--muted);margin:5px 0 0}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cat{background:white;border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center;box-shadow:0 5px 18px #171c2408}
+.cat .ico{font-size:30px}.cat strong{display:block;margin-top:8px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.photo{height:150px;background:linear-gradient(135deg,#343b43,#87683b);display:grid;place-items:center;color:#fff;font-size:44px}
+.card-body{padding:18px}.tag{font-size:12px;color:#765a26;background:#f6edda;padding:4px 9px;border-radius:20px}
+.card h3{margin:12px 0 4px}.card p{color:var(--muted);font-size:14px;margin:0 0 13px}
+.note{font-size:13px;color:var(--muted);background:#fff9eb;border-inline-start:3px solid var(--gold);padding:12px 15px;border-radius:7px;margin-top:18px}
+.join{background:var(--ink);color:white;border-radius:18px;padding:36px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.join p{color:#d8dce0;max-width:650px}.join h2{color:var(--gold)}
+footer{background:#101419;color:#d9dce0;padding:34px 0;margin-top:60px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:var(--gold)}
+.whatsapp{position:fixed;bottom:18px;inset-inline-end:18px;background:#168c55;color:white;border-radius:30px;padding:12px 18px;box-shadow:0 5px 20px #0003;z-index:4;font-weight:800}
+.hidden{display:none!important}
+@media(max-width:760px){nav{gap:10px;font-size:12px}.categories{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.hero{padding:65px 0}.join{display:block}.section-head{display:block}}
+@media(max-width:430px){nav a{display:none}.brand{font-size:13px}.brand small{font-size:9px}}
+</style>
+</head>
 <body>
-<header class="top"><div class="wrap topin"><a class="brand" href="#home"><span class="mark">✦</span><span><strong>NDJAMENA FOOD GUIDE</strong><small data-ar="دليل مطاعم ومقاهي أنجمينا" data-fr="Guide des restaurants et cafés de N'Djamena">دليل مطاعم ومقاهي أنجمينا</small></span></a><nav class="nav"><a href="#categories" data-ar="الأقسام" data-fr="Catégories">الأقسام</a><a href="#directory" data-ar="الدليل" data-fr="Le guide">الدليل</a><a href="#join" data-ar="أضف مطعمك" data-fr="Ajouter mon établissement">أضف مطعمك</a></nav><button class="lang" id="langBtn">Français</button></div></header>
-<main id="home"><section class="hero"><div class="wrap"><div class="eyebrow">N'DJAMENA • CHAD</div><h1 data-ar="اكتشف مذاق أنجمينا" data-fr="Découvrez les saveurs de N'Djamena">اكتشف مذاق أنجمينا</h1><p data-ar="دليلك لاكتشاف المطاعم والمقاهي والعروض في مدينة أنجمينا — كل الأماكن في مكان واحد." data-fr="Votre guide pour découvrir les restaurants, cafés et offres à N'Djamena — toutes les adresses au même endroit.">دليلك لاكتشاف المطاعم والمقاهي والعروض في مدينة أنجمينا — كل الأماكن في مكان واحد.</p><span class="fr">Discover restaurants, cafés and local offers.</span><div class="search"><input id="searchInput" placeholder="ابحث عن مطعم أو مقهى أو منطقة..." aria-label="Search"><button id="searchBtn" data-ar="ابحث" data-fr="Rechercher">ابحث</button></div></div></section>
-<section class="section wrap" id="categories"><div class="sectionhead"><h2 data-ar="اكتشف حسب الفئة" data-fr="Explorer par catégorie">اكتشف حسب الفئة</h2><p data-ar="اختر ما تبحث عنه" data-fr="Choisissez ce que vous cherchez">اختر ما تبحث عنه</p></div><div class="categories"><button class="cat active" data-cat="all"><span class="ico">🍽️</span><b data-ar="الكل" data-fr="Tout">الكل</b><small data-ar="جميع الأماكن" data-fr="Tous les établissements">جميع الأماكن</small></button><button class="cat" data-cat="restaurant"><span class="ico">🍛</span><b data-ar="مطاعم" data-fr="Restaurants">مطاعم</b><small data-ar="وجبات ومأكولات" data-fr="Repas et cuisine">وجبات ومأكولات</small></button><button class="cat" data-cat="cafe"><span class="ico">☕</span><b data-ar="مقاهي" data-fr="Cafés">مقاهي</b><small data-ar="قهوة وحلويات" data-fr="Café et desserts">قهوة وحلويات</small></button><button class="cat" data-cat="delivery"><span class="ico">🛵</span><b data-ar="توصيل" data-fr="Livraison">توصيل</b><small data-ar="أماكن توفر التوصيل" data-fr="Établissements avec livraison">أماكن توفر التوصيل</small></button></div></section>
-<section class="section wrap" id="directory"><div class="sectionhead"><h2 data-ar="دليل الأماكن" data-fr="Le répertoire">دليل الأماكن</h2><p data-ar="قريباً: قائمة المطاعم والمقاهي المعتمدة في أنجمينا" data-fr="Bientôt : les restaurants et cafés vérifiés de N'Djamena">قريباً: قائمة المطاعم والمقاهي المعتمدة في أنجمينا</p></div><div class="toolbar"><span id="resultCount" data-ar="لا توجد أماكن منشورة بعد" data-fr="Aucun établissement publié pour le moment">لا توجد أماكن منشورة بعد</span><select id="sort"><option value="new" data-ar="الأحدث" data-fr="Plus récents">الأحدث</option><option value="name" data-ar="الاسم" data-fr="Nom">الاسم</option></select></div><div class="empty" id="empty"><div class="big">📍</div><strong data-ar="نعمل على إضافة أول الأماكن" data-fr="Nous préparons les premières fiches">نعمل على إضافة أول الأماكن</strong><span data-ar="سيظهر هنا كل مطعم أو مقهى بعد التحقق من بياناته وموافقة صاحبه." data-fr="Chaque établissement apparaîtra ici après vérification de ses informations et accord de son propriétaire.">سيظهر هنا كل مطعم أو مقهى بعد التحقق من بياناته وموافقة صاحبه.</span></div></section>
-<section class="wrap" id="join"><div class="join"><div><h2 data-ar="هل تملك مطعماً أو مقهى؟" data-fr="Vous possédez un restaurant ou un café ?">هل تملك مطعماً أو مقهى؟</h2><p data-ar="عرّف الناس بمكانك، قائمتك وعروضك من خلال دليل أنجمينا." data-fr="Faites découvrir votre établissement, votre menu et vos offres grâce au guide de N'Djamena.">عرّف الناس بمكانك، قائمتك وعروضك من خلال دليل أنجمينا.</p></div><a class="goldbtn" href="#contact" data-ar="اطلب إضافة منشأتك" data-fr="Demander une inscription">اطلب إضافة منشأتك</a></div></section><section class="wrap" id="contact" style="padding:22px 0 0;text-align:center;color:#756f64"><p data-ar="سيتم إضافة رقم واتساب والبريد الرسمي بعد اعتمادهما." data-fr="Le numéro WhatsApp et l’adresse e-mail officiels seront ajoutés après confirmation.">سيتم إضافة رقم واتساب والبريد الرسمي بعد اعتمادهما.</p></section></main>
-<footer class="footer"><div class="wrap footerin"><div><strong>NDJAMENA FOOD GUIDE</strong><div data-ar="اكتشف مذاق أنجمينا" data-fr="Découvrez les saveurs de N'Djamena">اكتشف مذاق أنجمينا</div></div><div data-ar="منصة مستقلة للتعريف بالمطاعم والمقاهي في أنجمينا." data-fr="Une plateforme indépendante pour découvrir les restaurants et cafés de N'Djamena.">منصة مستقلة للتعريف بالمطاعم والمقاهي في أنجمينا.</div></div><div class="wrap note">© <span id="year"></span> NDJAMENA FOOD GUIDE. <span data-ar="جميع الحقوق محفوظة." data-fr="Tous droits réservés.">جميع الحقوق محفوظة.</span> <span data-ar="نسخة أولية — يجب إضافة بيانات التواصل والدومين قبل النشر العام." data-fr="Version initiale — les coordonnées et le domaine doivent être confirmés avant publication.">نسخة أولية — يجب إضافة بيانات التواصل والدومين قبل النشر العام.</span></div></footer>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span class="mark">✦</span><span><span data-ar="دليل مطاعم ومقاهي أنجمينا" data-fr="Guide des Restaurants et Cafés">دليل مطاعم ومقاهي أنجمينا</span><small>NDJAMENA FOOD GUIDE</small></span></a>
+<nav><a href="#categories" data-ar="الأقسام" data-fr="Catégories">الأقسام</a><a href="#listings" data-ar="الدليل" data-fr="Le guide">الدليل</a><a href="#join" data-ar="أضف مطعمك" data-fr="Inscrire un établissement">أضف مطعمك</a></nav>
+<button class="lang" id="langBtn" type="button">Français</button>
+</div></header>
+<main>
+<div class="hero"><div class="wrap hero-inner">
+<div class="eyebrow">NDJAMENA FOOD GUIDE</div>
+<h1 data-ar="اكتشف مذاق أنجمينا" data-fr="Découvrez les saveurs de N'Djamena">اكتشف مذاق أنجمينا</h1>
+<p data-ar="دليلك لاكتشاف المطاعم والمقاهي والعروض في مدينة أنجمينا. ابحث عن المكان المناسب وتواصل معه مباشرة." data-fr="Votre guide pour découvrir les restaurants, cafés et offres à N'Djamena. Trouvez une adresse et contactez-la directement.">دليلك لاكتشاف المطاعم والمقاهي والعروض في مدينة أنجمينا. ابحث عن المكان المناسب وتواصل معه مباشرة.</p>
+<a class="btn gold" href="#listings" data-ar="استكشف الدليل" data-fr="Explorer le guide">استكشف الدليل</a>
+<a class="btn outline" href="#join" data-ar="سجّل مطعمك" data-fr="Inscrire mon établissement">سجّل مطعمك</a>
+<div class="searchbar"><input id="searchInput" type="search" placeholder="ابحث عن مطعم أو مقهى..." aria-label="Search"><button class="gold" id="searchBtn" data-ar="بحث" data-fr="Rechercher">بحث</button></div>
+</div></div>
+<section id="categories"><div class="wrap">
+<div class="section-head"><div><h2 data-ar="تصفّح حسب الفئة" data-fr="Explorer par catégorie">تصفّح حسب الفئة</h2><p class="sub" data-ar="اعثر على ما يناسب ذوقك" data-fr="Trouvez ce qui vous fait envie">اعثر على ما يناسب ذوقك</p></div></div>
+<div class="categories">
+<div class="cat"><div class="ico">🍽️</div><strong data-ar="مطاعم" data-fr="Restaurants">مطاعم</strong></div>
+<div class="cat"><div class="ico">☕</div><strong data-ar="مقاهي" data-fr="Cafés">مقاهي</strong></div>
+<div class="cat"><div class="ico">🍰</div><strong data-ar="حلويات" data-fr="Pâtisseries">حلويات</strong></div>
+<div class="cat"><div class="ico">🛵</div><strong data-ar="توصيل" data-fr="Livraison">توصيل</strong></div>
+</div></div></section>
+<section id="listings"><div class="wrap">
+<div class="section-head"><div><h2 data-ar="اكتشف الأماكن" data-fr="Découvrez les établissements">اكتشف الأماكن</h2><p class="sub" data-ar="مساحة مخصصة لإضافة المطاعم والمقاهي المعتمدة" data-fr="Espace dédié aux restaurants et cafés inscrits">مساحة مخصصة لإضافة المطاعم والمقاهي المعتمدة</p></div></div>
+<div class="cards" id="cards">
+<article class="card" data-search="restaurant restaurant مطعم"><div class="photo">🍴</div><div class="card-body"><span class="tag" data-ar="مطعم" data-fr="Restaurant">مطعم</span><h3 data-ar="مساحة لمطعمك القادم" data-fr="La place de votre restaurant">مساحة لمطعمك القادم</h3><p data-ar="سيتم عرض اسم المطعم وصوره وموقعه وقائمة الطعام بعد التسجيل والتحقق." data-fr="Le nom, les photos, l'adresse et le menu seront ajoutés après inscription et vérification.">سيتم عرض اسم المطعم وصوره وموقعه وقائمة الطعام بعد التسجيل والتحقق.</p></div></article>
+<article class="card" data-search="cafe café coffee مقهى قهوة"><div class="photo">☕</div><div class="card-body"><span class="tag" data-ar="مقهى" data-fr="Café">مقهى</span><h3 data-ar="مساحة لمقهاك القادم" data-fr="La place de votre café">مساحة لمقهاك القادم</h3><p data-ar="أضف صور المكان والمشروبات وساعات العمل ووسائل التواصل." data-fr="Ajoutez les photos, les boissons, les horaires et les coordonnées.">أضف صور المكان والمشروبات وساعات العمل ووسائل التواصل.</p></div></article>
+<article class="card" data-search="promotion offre عرض promotion"><div class="photo">⭐</div><div class="card-body"><span class="tag" data-ar="عروض" data-fr="Offres">عروض</span><h3 data-ar="العروض المميزة" data-fr="Offres à la une">العروض المميزة</h3><p data-ar="تُنشر العروض بعد تأكيدها من المطاعم المشاركة." data-fr="Les offres seront publiées après confirmation par les établissements participants.">تُنشر العروض بعد تأكيدها من المطاعم المشاركة.</p></div></article>
+</div>
+<div class="note" data-ar="تنبيه: هذه نسخة الإطلاق الأولية. البطاقات أعلاه نماذج توضيحية وليست أسماء مطاعم حقيقية. ستُضاف بيانات الأماكن بعد موافقة أصحابها والتحقق منها." data-fr="Note : cette première version contient des exemples de présentation, pas de vrais établissements. Les fiches seront ajoutées après accord des propriétaires et vérification des informations.">تنبيه: هذه نسخة الإطلاق الأولية. البطاقات أعلاه نماذج توضيحية وليست أسماء مطاعم حقيقية. ستُضاف بيانات الأماكن بعد موافقة أصحابها والتحقق منها.</div>
+</div></section>
+<section id="join"><div class="wrap"><div class="join"><div><h2 data-ar="هل تملك مطعماً أو مقهى؟" data-fr="Vous possédez un restaurant ou un café ?">هل تملك مطعماً أو مقهى؟</h2><p data-ar="انضم إلى دليل مطاعم ومقاهي أنجمينا، وعرّف العملاء بمكانك وقائمة الطعام والعروض. تواصل معنا لإضافة صفحتك." data-fr="Rejoignez le Guide des Restaurants et Cafés de N'Djamena et présentez votre établissement, votre menu et vos offres. Contactez-nous pour créer votre fiche.">انضم إلى دليل مطاعم ومقاهي أنجمينا، وعرّف العملاء بمكانك وقائمة الطعام والعروض. تواصل معنا لإضافة صفحتك.</p></div><a class="btn gold" id="contactLink" href="https://wa.me/23560705444?text=السلام%20عليكم،%20أرغب%20في%20تسجيل%20مطعمي%20في%20دليل%20مطاعم%20ومقاهي%20أنجمينا" target="_blank" rel="noopener" data-ar="تواصل عبر واتساب" data-fr="Contacter sur WhatsApp">تواصل عبر واتساب</a></div></div></section>
+</main>
+<footer><div class="wrap foot"><div><strong>NDJAMENA FOOD GUIDE</strong><div data-ar="دليل مطاعم ومقاهي أنجمينا" data-fr="Guide des Restaurants et Cafés de N'Djamena">دليل مطاعم ومقاهي أنجمينا</div><small data-ar="اكتشف مذاق أنجمينا" data-fr="Découvrez les saveurs de N'Djamena">اكتشف مذاق أنجمينا</small></div><div><div>WhatsApp: <a href="https://wa.me/23560705444">+235 60 70 54 44</a></div><small>© <span id="year"></span> NDJAMENA FOOD GUIDE</small></div></div></footer>
+<a class="whatsapp" href="https://wa.me/23560705444" target="_blank" rel="noopener">WhatsApp 60705444</a>
 <script>
-let lang='ar';const btn=document.getElementById('langBtn');function setLang(next){lang=next;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-ar][data-fr]').forEach(el=>{el.textContent=el.dataset[lang]});document.getElementById('searchInput').placeholder=lang==='ar'?'ابحث عن مطعم أو مقهى أو منطقة...':'Rechercher un restaurant, café ou quartier...';btn.textContent=lang==='ar'?'Français':'العربية'}btn.addEventListener('click',()=>setLang(lang==='ar'?'fr':'ar'));document.querySelectorAll('.cat').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));c.classList.add('active')}));document.getElementById('searchBtn').addEventListener('click',()=>{const q=document.getElementById('searchInput').value.trim();if(q){document.getElementById('empty').querySelector('strong').textContent=lang==='ar'?'لم نضف نتائج بعد — قريباً':'Aucun résultat pour le moment — bientôt';}});document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>
+let current='ar';
+const langBtn=document.getElementById('langBtn');
+function setLang(lang){current=lang;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+document.querySelectorAll('[data-ar][data-fr]').forEach(el=>el.textContent=el.dataset[lang]);
+document.getElementById('searchInput').placeholder=lang==='ar'?'ابحث عن مطعم أو مقهى...':'Rechercher un restaurant ou un café...';
+langBtn.textContent=lang==='ar'?'Français':'العربية';
+document.getElementById('contactLink').href=lang==='ar'?'https://wa.me/23560705444?text=السلام%20عليكم،%20أرغب%20في%20تسجيل%20مطعمي%20في%20دليل%20مطاعم%20ومقاهي%20أنجمينا':'https://wa.me/23560705444?text=Bonjour,%20je%20souhaite%20inscrire%20mon%20restaurant%20dans%20le%20Guide%20des%20Restaurants%20et%20Cafés%20de%20N%27Djamena';}
+langBtn.addEventListener('click',()=>setLang(current==='ar'?'fr':'ar'));
+function search(){const q=document.getElementById('searchInput').value.trim().toLowerCase();document.querySelectorAll('#cards .card').forEach(card=>card.classList.toggle('hidden',q&&!((card.innerText+' '+card.dataset.search).toLowerCase().includes(q))));}
+document.getElementById('searchBtn').addEventListener('click',search);
+document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body></html>
