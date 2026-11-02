@@ -17,7 +17,16 @@ header{background:var(--ink);color:white;position:sticky;top:0;z-index:5;border-
 nav{display:flex;gap:20px;align-items:center;font-size:14px}nav a:hover{color:var(--gold)}
 button,.btn{border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer;font:inherit}
 .lang{background:transparent;color:var(--gold);border:1px solid var(--gold);padding:7px 13px}
-.hero{background:linear-gradient(120deg,rgba(23,28,36,.97),rgba(23,28,36,.78)),radial-gradient(circle at 80% 10%,#72552b,#171c24);color:white;padding:88px 0 78px}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:#171c24;color:white;padding:88px 0 78px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-size:cover;background-position:center 48%;background-repeat:no-repeat;animation:heroFoodSlides 20s infinite;transform:scale(1.02)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(12,16,21,.91),rgba(12,16,21,.70) 55%,rgba(12,16,21,.42))}
+.hero-inner{position:relative;z-index:1}
+@keyframes heroFoodSlides{
+0%,46%{background-image:url("https://images.unsplash.com/photo-1660927428655-0926fd53fd2b?auto=format&fit=crop&w=2200&q=85")}
+50%,96%{background-image:url("https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?auto=format&fit=crop&w=2200&q=85")}
+100%{background-image:url("https://images.unsplash.com/photo-1660927428655-0926fd53fd2b?auto=format&fit=crop&w=2200&q=85")}
+}
+@media(prefers-reduced-motion:reduce){.hero::before{animation:none;background-image:url("https://images.unsplash.com/photo-1660927428655-0926fd53fd2b?auto=format&fit=crop&w=2200&q=85")}}
 .hero-inner{max-width:760px}.eyebrow{color:var(--gold);font-weight:800;letter-spacing:1px}
 h1{font-size:clamp(32px,5vw,56px);line-height:1.2;margin:12px 0}
 .hero p{font-size:18px;color:#e8e3d9;max-width:650px}
@@ -40,15 +49,17 @@ h2{font-size:clamp(25px,3vw,34px);margin:0}.sub{color:var(--muted);margin:5px 0 
 footer{background:#101419;color:#d9dce0;padding:34px 0;margin-top:60px}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot strong{color:var(--gold)}
 .whatsapp{position:fixed;bottom:18px;inset-inline-end:18px;background:#168c55;color:white;border-radius:30px;padding:12px 18px;box-shadow:0 5px 20px #0003;z-index:4;font-weight:800}
-.hidden{display:none!important}
-@media(max-width:760px){nav{gap:10px;font-size:12px}.categories{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.hero{padding:65px 0}.join{display:block}.section-head{display:block}}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.plan{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;display:flex;flex-direction:column;gap:10px}.plan.featured{border:2px solid var(--gold);box-shadow:0 8px 25px #0000000c}.plan h3{margin:0}.plan p{color:var(--muted);font-size:14px;flex:1}.price{font-size:25px;font-weight:900;color:#8a672c}.price small{font-size:13px}.plan .btn{display:inline-block;text-align:center}.reg-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.reg-form label{display:flex;flex-direction:column;gap:6px;font-weight:700}.reg-form input,.reg-form select,.reg-form textarea{width:100%;border:1px solid #d8d2c7;border-radius:9px;padding:12px;font:inherit;background:#fff;color:var(--ink)}.reg-form .full{grid-column:1/-1}.hidden{display:none!important}
+@media(max-width:900px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){nav{gap:10px;font-size:12px}.categories{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.hero{padding:65px 0}.join{display:block}.section-head{display:block}.reg-form{grid-template-columns:1fr}.reg-form .full{grid-column:auto}}
+@media(max-width:520px){.plans{grid-template-columns:1fr}}
 @media(max-width:430px){nav a{display:none}.brand{font-size:13px}.brand small{font-size:9px}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="brand" href="#"><span class="mark">✦</span><span><span data-ar="دليل مطاعم ومقاهي أنجمينا" data-fr="Guide des Restaurants et Cafés">دليل مطاعم ومقاهي أنجمينا</span><small>NDJAMENA FOOD GUIDE</small></span></a>
-<nav><a href="#categories" data-ar="الأقسام" data-fr="Catégories">الأقسام</a><a href="#listings" data-ar="الدليل" data-fr="Le guide">الدليل</a><a href="#join" data-ar="أضف مطعمك" data-fr="Inscrire un établissement">أضف مطعمك</a></nav>
+<nav><a href="#categories" data-ar="الأقسام" data-fr="Catégories">الأقسام</a><a href="#listings" data-ar="الدليل" data-fr="Le guide">الدليل</a><a href="#plans" data-ar="الباقات" data-fr="Tarifs">الباقات</a><a href="#join" data-ar="سجّل منشأتك" data-fr="Inscrire un établissement">سجّل منشأتك</a></nav>
 <button class="lang" id="langBtn" type="button">Français</button>
 </div></header>
 <main>
@@ -77,7 +88,28 @@ footer{background:#101419;color:#d9dce0;padding:34px 0;margin-top:60px}
 </div>
 <div class="note" data-ar="تنبيه: هذه نسخة الإطلاق الأولية. البطاقات أعلاه نماذج توضيحية وليست أسماء مطاعم حقيقية. ستُضاف بيانات الأماكن بعد موافقة أصحابها والتحقق منها." data-fr="Note : cette première version contient des exemples de présentation, pas de vrais établissements. Les fiches seront ajoutées après accord des propriétaires et vérification des informations.">تنبيه: هذه نسخة الإطلاق الأولية. البطاقات أعلاه نماذج توضيحية وليست أسماء مطاعم حقيقية. ستُضاف بيانات الأماكن بعد موافقة أصحابها والتحقق منها.</div>
 </div></section>
-<section id="join"><div class="wrap"><div class="join"><div><h2 data-ar="هل تملك مطعماً أو مقهى؟" data-fr="Vous possédez un restaurant ou un café ?">هل تملك مطعماً أو مقهى؟</h2><p data-ar="انضم إلى دليل مطاعم ومقاهي أنجمينا، وعرّف العملاء بمكانك وقائمة الطعام والعروض. تواصل معنا لإضافة صفحتك." data-fr="Rejoignez le Guide des Restaurants et Cafés de N'Djamena et présentez votre établissement, votre menu et vos offres. Contactez-nous pour créer votre fiche.">انضم إلى دليل مطاعم ومقاهي أنجمينا، وعرّف العملاء بمكانك وقائمة الطعام والعروض. تواصل معنا لإضافة صفحتك.</p></div><a class="btn gold" id="contactLink" href="https://wa.me/23560705444?text=السلام%20عليكم،%20أرغب%20في%20تسجيل%20مطعمي%20في%20دليل%20مطاعم%20ومقاهي%20أنجمينا" target="_blank" rel="noopener" data-ar="تواصل عبر واتساب" data-fr="Contacter sur WhatsApp">تواصل عبر واتساب</a></div></div></section>
+<section id="plans"><div class="wrap">
+<div class="section-head"><div><h2 data-ar="باقات الإعلان والاشتراك" data-fr="Formules d'abonnement">باقات الإعلان والاشتراك</h2><p class="sub" data-ar="اختر مستوى الظهور المناسب لمنشأتك — الأسعار بالفرنك سيفا شهرياً" data-fr="Choisissez la visibilité adaptée — prix mensuels en FCFA">اختر مستوى الظهور المناسب لمنشأتك — الأسعار بالفرنك سيفا شهرياً</p></div></div>
+<div class="plans">
+<article class="plan"><span class="tag" data-ar="مجاني" data-fr="Gratuit">مجاني</span><h3 data-ar="الإدراج الأساسي" data-fr="Fiche de base">الإدراج الأساسي</h3><div class="price" data-ar="0 FCFA" data-fr="0 FCFA">0 FCFA</div><p data-ar="اسم المنشأة والحي والعنوان ووسيلة التواصل وصورة واحدة." data-fr="Nom, quartier, adresse, contact et une photo.">اسم المنشأة والحي والعنوان ووسيلة التواصل وصورة واحدة.</p><a class="btn outline plan-btn" href="#register" data-plan="مجاني أساسي" data-ar="اختر المجاني" data-fr="Choisir gratuit">اختر المجاني</a></article>
+<article class="plan"><span class="tag" data-ar="أساسية مدفوعة" data-fr="Starter">Starter</span><h3 data-ar="الظهور الأساسي" data-fr="Visibilité Starter">الظهور الأساسي</h3><div class="price">15,000 <small>FCFA</small></div><p data-ar="شهرياً — حتى 3 صور، ومعلومات المنشأة ووسيلة التواصل." data-fr="Par mois — jusqu'à 3 photos, informations et contact.">شهرياً — حتى 3 صور، ومعلومات المنشأة ووسيلة التواصل.</p><a class="btn outline plan-btn" href="#register" data-plan="Starter - 15,000 FCFA" data-ar="اختر Starter" data-fr="Choisir Starter">اختر Starter</a></article>
+<article class="plan featured"><span class="tag" data-ar="الأكثر تميزاً" data-fr="Recommandé">الأكثر تميزاً</span><h3>Pro</h3><div class="price">35,000 <small>FCFA</small></div><p data-ar="شهرياً — حتى 5 صور، قائمة الطعام والأسعار، وإبراز في نتائج الدليل." data-fr="Par mois — jusqu'à 5 photos, menu, prix et mise en avant dans le guide.">شهرياً — حتى 5 صور، قائمة الطعام والأسعار، وإبراز في نتائج الدليل.</p><a class="btn gold plan-btn" href="#register" data-plan="Pro - 35,000 FCFA" data-ar="اختر Pro" data-fr="Choisir Pro">اختر Pro</a></article>
+<article class="plan"><span class="tag" data-ar="مميزة" data-fr="Premium">مميزة</span><h3>Premium</h3><div class="price">60,000 <small>FCFA</small></div><p data-ar="شهرياً — مزايا Pro، فيديو ترويجي قصير، وظهور مميز في الصفحة الرئيسية ومنشورات ترويجية." data-fr="Par mois — avantages Pro, courte vidéo, visibilité en page d'accueil et publications promotionnelles.">شهرياً — مزايا Pro، فيديو ترويجي قصير، وظهور مميز في الصفحة الرئيسية ومنشورات ترويجية.</p><a class="btn outline plan-btn" href="#register" data-plan="Premium - 60,000 FCFA" data-ar="اختر Premium" data-fr="Choisir Premium">اختر Premium</a></article>
+</div><div class="note" data-ar="الدفع للاشتراكات المدفوعة نقداً أو عبر Airtel Money أو Moov Money. تتواصل الإدارة معك لتأكيد طريقة الدفع وتعليماتها. لا يتم تفعيل الباقة إلا بعد مراجعة البيانات وتأكيد استلام المبلغ. الأسعار مقترحة وقابلة للمراجعة." data-fr="Paiement des abonnements payants en espèces, Airtel Money ou Moov Money. L'administration vous contactera pour confirmer les modalités. L'activation se fait après vérification des informations et confirmation du paiement. Tarifs proposés et révisables.">الدفع للاشتراكات المدفوعة نقداً أو عبر Airtel Money أو Moov Money. تتواصل الإدارة معك لتأكيد طريقة الدفع وتعليماتها. لا يتم تفعيل الباقة إلا بعد مراجعة البيانات وتأكيد استلام المبلغ. الأسعار مقترحة وقابلة للمراجعة.</div>
+</div></section>
+<section id="join"><div class="wrap"><div class="join"><div><h2 data-ar="هل تملك مطعماً أو مقهى؟" data-fr="Vous possédez un restaurant ou un café ?">هل تملك مطعماً أو مقهى؟</h2><p data-ar="سجّل منشأتك الآن. يمكنك البدء بالإدراج المجاني أو اختيار باقة مدفوعة لظهور أكبر." data-fr="Inscrivez votre établissement. Commencez gratuitement ou choisissez une formule payante pour plus de visibilité.">سجّل منشأتك الآن. يمكنك البدء بالإدراج المجاني أو اختيار باقة مدفوعة لظهور أكبر.</p></div><a class="btn gold" href="#register" data-ar="ابدأ التسجيل" data-fr="Commencer l'inscription">ابدأ التسجيل</a></div></div></section>
+<section id="register"><div class="wrap"><div class="section-head"><div><h2 data-ar="نموذج تسجيل المنشأة" data-fr="Formulaire d'inscription">نموذج تسجيل المنشأة</h2><p class="sub" data-ar="املأ البيانات ثم أرسل الطلب عبر واتساب الإدارة." data-fr="Remplissez les informations puis envoyez votre demande à l'administration sur WhatsApp.">املأ البيانات ثم أرسل الطلب عبر واتساب الإدارة.</p></div></div>
+<form id="registrationForm" class="reg-form">
+<label><span data-ar="اسم المطعم أو المقهى" data-fr="Nom du restaurant ou café">اسم المطعم أو المقهى</span><input id="venueName" required placeholder="مثال: مطعم..." /></label>
+<label><span data-ar="نوع المنشأة" data-fr="Type d'établissement">نوع المنشأة</span><select id="venueType"><option>مطعم / Restaurant</option><option>مقهى / Café</option><option>حلويات ومخبوزات / Pâtisserie</option><option>خدمة توصيل / Livraison</option></select></label>
+<label><span data-ar="الحي أو المنطقة" data-fr="Quartier ou zone">الحي أو المنطقة</span><input id="venueArea" required placeholder="اسم الحي في أنجمينا" /></label>
+<label><span data-ar="رقم التواصل مع المنشأة" data-fr="Téléphone de l'établissement">رقم التواصل مع المنشأة</span><input id="venuePhone" type="tel" required placeholder="+235..." /></label>
+<label><span data-ar="الباقة المطلوبة" data-fr="Formule choisie">الباقة المطلوبة</span><select id="venuePlan"><option>إدراج أساسي مجاني / Fiche gratuite</option><option>Starter - 15,000 FCFA</option><option>Pro - 35,000 FCFA</option><option>Premium - 60,000 FCFA</option></select></label>
+<label><span data-ar="طريقة الدفع (للباقات المدفوعة)" data-fr="Mode de paiement (formules payantes)">طريقة الدفع (للباقات المدفوعة)</span><select id="venuePayment"><option>نقداً / Espèces</option><option>Airtel Money</option><option>Moov Money</option><option>أحتاج إلى معرفة التفاصيل / À préciser</option></select></label>
+<label class="full"><span data-ar="معلومات إضافية (اختياري)" data-fr="Informations complémentaires (facultatif)">معلومات إضافية (اختياري)</span><textarea id="venueNotes" rows="3" placeholder="العنوان التفصيلي، ساعات العمل، الخدمات..."></textarea></label>
+<button class="btn gold full" type="submit" data-ar="إرسال طلب التسجيل عبر واتساب" data-fr="Envoyer la demande sur WhatsApp">إرسال طلب التسجيل عبر واتساب</button>
+</form><p class="note" data-ar="إرسال النموذج لا يعني قبول المنشأة أو تفعيل الاشتراك تلقائياً. ستراجع الإدارة البيانات وتتواصل معك لاستكمال التسجيل. لا ترسل كلمات مرور أو رموز تحقق أو بيانات مصرفية سرية." data-fr="L'envoi du formulaire ne confirme pas automatiquement l'inscription ou l'abonnement. L'administration vérifiera les informations et vous contactera. N'envoyez aucun mot de passe, code de vérification ou donnée bancaire confidentielle.">إرسال النموذج لا يعني قبول المنشأة أو تفعيل الاشتراك تلقائياً. ستراجع الإدارة البيانات وتتواصل معك لاستكمال التسجيل. لا ترسل كلمات مرور أو رموز تحقق أو بيانات مصرفية سرية.</p>
+</div></section>
 </main>
 <footer><div class="wrap foot"><div><strong>NDJAMENA FOOD GUIDE</strong><div data-ar="دليل مطاعم ومقاهي أنجمينا" data-fr="Guide des Restaurants et Cafés de N'Djamena">دليل مطاعم ومقاهي أنجمينا</div><small data-ar="اكتشف مذاق أنجمينا" data-fr="Découvrez les saveurs de N'Djamena">اكتشف مذاق أنجمينا</small></div><div><div>WhatsApp: <a href="https://wa.me/23560705444">+235 60 70 54 44</a></div><small>© <span id="year"></span> NDJAMENA FOOD GUIDE</small></div></div></footer>
 <a class="whatsapp" href="https://wa.me/23560705444" target="_blank" rel="noopener">WhatsApp 60705444</a>
@@ -93,6 +125,8 @@ langBtn.addEventListener('click',()=>setLang(current==='ar'?'fr':'ar'));
 function search(){const q=document.getElementById('searchInput').value.trim().toLowerCase();document.querySelectorAll('#cards .card').forEach(card=>card.classList.toggle('hidden',q&&!((card.innerText+' '+card.dataset.search).toLowerCase().includes(q))));}
 document.getElementById('searchBtn').addEventListener('click',search);
 document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+document.querySelectorAll('.plan-btn').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById('venuePlan').value=btn.dataset.plan;}));
+document.getElementById('registrationForm').addEventListener('submit',function(e){e.preventDefault();const v=id=>document.getElementById(id).value.trim();const lines=[ 'طلب تسجيل جديد في دليل مطاعم ومقاهي أنجمينا', 'اسم المنشأة: '+v('venueName'), 'النوع: '+v('venueType'), 'الحي: '+v('venueArea'), 'رقم المنشأة: '+v('venuePhone'), 'الباقة: '+v('venuePlan'), 'طريقة الدفع: '+v('venuePayment'), 'معلومات إضافية: '+(v('venueNotes')||'لا يوجد') ];window.open('https://wa.me/23560705444?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');});
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body></html>

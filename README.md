@@ -1,19 +1,11 @@
-# دليل مطاعم ومقاهي أنجمينا | NDJAMENA FOOD GUIDE
+NDJAMENA FOOD GUIDE – Updated launch page
 
-موقع تعريفي ثنائي اللغة (العربية والفرنسية)، بتصميم متجاوب مع الهواتف والحواسيب.
+Files:
+- index.html: Arabic/French responsive website with free basic listing, monthly paid plans, and a registration form.
 
-## التشغيل
-افتح `index.html` في المتصفح لمعاينة الموقع.
+Registration form behavior:
+- It opens WhatsApp to +235 60 70 54 44 with the submitted venue details prefilled.
+- It does not store submissions in a database. The administrator must review requests and confirm payment manually.
+- Cash, Airtel Money, and Moov Money are offered as payment methods. Do not publish payment account details until they are confirmed by the administrator.
 
-## النشر على GitHub Pages
-1. ارفع `index.html` إلى جذر المستودع.
-2. افتح Settings ثم Pages.
-3. اختر Deploy from a branch، ثم `main` و`/ (root)`، ثم Save.
-
-يمكن أيضاً ربط المستودع بـ Netlify.
-
-## التواصل
-WhatsApp: +235 60705444
-
-## ملاحظة
-البطاقات الموجودة أمثلة تصميمية وليست مطاعم فعلية. أضف بيانات المطاعم بعد موافقة أصحابها والتحقق من المعلومات.
+To publish: replace the existing index.html in the GitHub repository connected to Netlify, then wait for the Netlify deployment to finish.
